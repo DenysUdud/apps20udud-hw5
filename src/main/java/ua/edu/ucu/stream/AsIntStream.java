@@ -69,7 +69,7 @@ public class AsIntStream implements IntStream {
 
     @Override
     public long count() {
-        if (!iterator.hasNext()) {return 0;}
+        if (!iterator.hasNext()) { return 0; }
         return reduce(0, (num, x) -> num++);
     }
 
