@@ -3,14 +3,14 @@ package ua.edu.ucu.iterators;
 import ua.edu.ucu.function.IntPredicate;
 
 import java.util.Iterator;
-import java.util.OptionalInt;
 
 public class FilterIterator implements Iterator {
     private final Iterator<Integer> parentIterator;
     private final IntPredicate predicate;
     private Integer next;
 
-    public FilterIterator(Iterator<Integer> parentIterator, IntPredicate predicate) {
+    public FilterIterator(Iterator<Integer> parentIterator,
+                          IntPredicate predicate) {
         this.parentIterator = parentIterator;
         this.predicate = predicate;
         generateNext();

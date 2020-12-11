@@ -9,9 +9,9 @@ public class FlatMapIterator implements Iterator {
     private final IntToIntStreamFunction func;
     private final Iterator<Integer> parentIterator;
     private StreamIterator newIterator;
-    private int index;
 
-    public FlatMapIterator(Iterator<Integer> parentIterator, IntToIntStreamFunction func) {
+    public FlatMapIterator(Iterator<Integer> parentIterator,
+                           IntToIntStreamFunction func) {
         this.func = func;
         this.parentIterator = parentIterator;
         this.newIterator = new StreamIterator();

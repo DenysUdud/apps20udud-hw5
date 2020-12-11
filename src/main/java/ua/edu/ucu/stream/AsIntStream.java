@@ -49,7 +49,7 @@ public class AsIntStream implements IntStream {
         return getMaxMin(false);
     }
 
-    public Integer getMaxMin (boolean max) {
+    public Integer getMaxMin(boolean max) {
         /*
         The method used to find min or maximum value.
         to get max - max = true, to get min, max = false.
@@ -69,14 +69,7 @@ public class AsIntStream implements IntStream {
 
     @Override
     public long count() {
-        // for me:
-        // https://docs.oracle.com/javase/8/docs/api/java/util/function/IntBinaryOperator.html
-        //https://www.geeksforgeeks.org/java-util-function-intbinaryoperator-interface-with-examples/
-        try {
-            isEmpty();
-        } catch (Exception e) {
-            return 0;
-        }
+        if (!iterator.hasNext()) {return 0;}
         return reduce(0, (num, x) -> num++);
     }
 
